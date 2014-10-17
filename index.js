@@ -9,6 +9,18 @@ var config = {
 var port = 3000;
 
 
+
+var start = function(){
+  var cmd = 'pm2 restart 0';
+  exec(cmd, function(err, stdout, stderr){
+    if (err){
+      // cry
+
+    }
+  });
+};
+
+
 var server = http.createServer(function(req, res) {
   var data = '';
   if (req.method === 'POST') {
@@ -25,6 +37,7 @@ var server = http.createServer(function(req, res) {
           var cmd = 'git pull origin master';
           exec(cmd, function(err, stdout, stderr){
             console.log(err, stdout, stderr);
+            start();
           });
         }
       }
