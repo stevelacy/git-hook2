@@ -39,4 +39,4 @@ var server = http.createServer(function(req, res) {
 
 });
 
-server.listen(port);
+server.listen(config.port);
