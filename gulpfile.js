@@ -2,8 +2,6 @@ var gulp = require('gulp');
 var git = require('gulp-git');
 
 
-
-
 gulp.task('git', function(){
   return gulp.src('.')
     .pipe(git.add({args: '-A'}))
